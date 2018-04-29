@@ -1,13 +1,10 @@
 import { Router } from 'express';
-import categoriesRoutes from './routes/categories';
-import postsRoutes from './routes/posts';
-import usersRoutes from './routes/users';
+import { userRouter, hotelRouter } from './routes';
 
 const api = Router();
 
-api.use("/categories", categoriesRoutes);
-api.use("/posts", postsRoutes);
-api.use("/users", usersRoutes);
+api.use("/users", userRouter);
+api.use("/hotels", hotelRouter);
 
 export default api;
 

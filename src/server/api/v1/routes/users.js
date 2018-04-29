@@ -3,6 +3,7 @@ import {
 } from 'express';
 import * as controller from '../controllers/users';
 
+//Test for to use
 /*
  * /api/users/     GET    - READ ALL
  * /api/users/     POST   - CREATE

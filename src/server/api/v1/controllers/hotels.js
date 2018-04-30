@@ -10,8 +10,19 @@ export const post = (req, res, next) => {
 }
 
 export const getByStars = (req, res) => {
-    const stars = req.params.filter;
-    res.json(data.filter(hotel => hotel.stars === parseInt(stars, 10)));
+    const stars = req.body.stars;
+    const dataHotels = [];
+    if (stars.includes('*')) {
+        res.json(data);
+    } else {
+        let hotels = [];
+        stars.forEach(star => {
+            hotels = data.filter(hotel => hotel.stars === parseInt(star, 10));
+            dataHotels.push(...hotels);
+        });
+        res.json(dataHotels);
+    }
+    
 }
 
 export const getByName = (req, res) => {

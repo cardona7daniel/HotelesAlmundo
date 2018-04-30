@@ -7,9 +7,10 @@ const router = Router();
 
 router.route("/")
     .get(controller.all)
+    .post(controller.getByStars)
 
 router.route("/:filter")
-    .get(controller.getByStars)
-    .post(controller.getByName)
+    .get(controller.getByName)
+    .post(controller.getByStars)
 
 export default router;
